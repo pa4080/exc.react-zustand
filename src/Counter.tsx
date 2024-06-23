@@ -20,14 +20,15 @@ const setCountFn = () => {
  */
 const Count: React.FC = () => {
   const count = useCounterStore((state) => state.count);
-  const incrementByAmount = useCounterStore((state) => state.incrementByAmount);
+  const setAmount = useCounterStore((state) => state.setAmount);
 
   useEffect(() => {
     const storedCount = Number(
       JSON.parse(localStorage.getItem("count") || "0")
     );
 
-    if (storedCount && storedCount !== count) incrementByAmount(storedCount);
+    if (storedCount && !isNaN(storedCount) && storedCount !== count)
+      setAmount(storedCount);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
