@@ -1,11 +1,19 @@
 import { create } from "zustand";
 
+/**
+ * Don't use one giant store!
+ * Use more small separate stores.
+ * For example if you have authentication,
+ * you can create a separate store for it.
+ * Even in a separate file.
+ */
+
 interface CounterStore {
   count: number;
   increment: () => void;
   decrement: () => void;
   incrementByAmount: (amount: number) => void;
-  incrementByAmountAsync: (amount: number) => Promise<void>;
+  incByAmountAsync: (amount: number) => Promise<void>;
 }
 
 /**
@@ -17,7 +25,7 @@ export const useCounterStore = create<CounterStore>((set) => ({
   decrement: () => set((state) => ({ count: state.count - 1 })),
   incrementByAmount: (amount: number) =>
     set((state) => ({ count: state.count + amount })),
-  incrementByAmountAsync: async (amount: number) => {
+  incByAmountAsync: async (amount: number) => {
     // simulate an async action that takes 1 second
     await new Promise((resolve) => setTimeout(resolve, 1000));
     set((state) => ({ count: state.count + amount }));
