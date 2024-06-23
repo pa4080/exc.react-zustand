@@ -1,5 +1,4 @@
-import React from "react";
-// import React, { useRef } from "react";
+import React, { useRef } from "react";
 import { useCounterStore } from "./state";
 
 /**
@@ -18,9 +17,13 @@ const Count: React.FC = () => {
 };
 
 const Counter: React.FC = () => {
-  // const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const increment = useCounterStore((state) => state.increment);
   const decrement = useCounterStore((state) => state.decrement);
+  const incrementByAmount = useCounterStore((state) => state.incrementByAmount);
+  const incrementByAmountAsync = useCounterStore(
+    (state) => state.incrementByAmountAsync
+  );
 
   return (
     <div className="counter-container">
@@ -31,13 +34,25 @@ const Counter: React.FC = () => {
           <button onClick={() => increment()}>Increment</button>
           <button onClick={() => decrement()}>Decrement</button>
         </div>
-        {/* <div className="button-row">
+        <div className="button-row">
           <input id="amount" type="number" ref={inputRef} defaultValue={10} />
         </div>
         <div className="button-row">
-          <button onClick={() => {}}>Increment by amount</button>
-          <button onClick={() => {}}>Increment by amount Async</button>
-        </div> */}
+          <button
+            onClick={() =>
+              incrementByAmount(inputRef.current?.valueAsNumber || 0)
+            }
+          >
+            Increment by amount
+          </button>
+          <button
+            onClick={() =>
+              incrementByAmountAsync(inputRef.current?.valueAsNumber || 0)
+            }
+          >
+            Increment by amount Async
+          </button>
+        </div>
       </div>
     </div>
   );
