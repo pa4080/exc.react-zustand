@@ -1,5 +1,6 @@
 #root {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 720px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -25,7 +26,7 @@ h1 {
 }
 
 .logo.zustand:hover {
-  filter: drop-shadow(0 0 1em 2em #646cffaa);
+  filter: drop-shadow(0 0 1.4em rgb(113 98 87 / 80%));
 }
 
 @keyframes logo-spin {

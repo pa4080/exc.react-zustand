@@ -5,11 +5,11 @@ Cosden Solutions](https://www.youtube.com/watch?v=_ngCLZ5Iz-0).
 
 Base concepts of Zustand:
 
-...
+- Zustand has a comfy API based on hooks. It isn't boilerplatey or opinionated, but has enough convention to be explicit and flux-like.
 
-Key points:
+- In contrast of Redux Zustand doesn't use a complex state provider, but as we said it uses hooks.
 
-...
+- It deals with common pitfalls, like the dreaded zombie child problem, React concurrency, and context loss between mixed renderers. It may be the one state manager in the React space that gets all of these right.
 
 See also:
 
