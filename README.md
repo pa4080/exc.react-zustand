@@ -15,7 +15,8 @@ Base concepts of Zustand:
 
 See also:
 
-...
+- [Why I Moved **from React Redux to Zustand** and Why You Should Too! by CoderOne](https://youtu.be/DK-S4ZcmDcE?si=eiDbZG9wqrY2ysGi&t=888)
+- Need to try the [**`persist()`**](https://docs.pmnd.rs/zustand/migrations/migrating-to-v4#persist) function instead using the local storage?
 
 ## React + TypeScript + Vite + Zustand
 
