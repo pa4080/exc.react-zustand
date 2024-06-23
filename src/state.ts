@@ -14,6 +14,7 @@ interface CounterStore {
   decrement: () => void;
   incrementByAmount: (amount: number) => void;
   incByAmountAsync: (amount: number) => Promise<void>;
+  setAmount: (amount: number) => void;
 }
 
 /**
@@ -21,6 +22,9 @@ interface CounterStore {
  */
 export const useCounterStore = create<CounterStore>((set) => ({
   count: 0, // This is the initial state value
+  setAmount: (amount: number) => {
+    set({ count: amount });
+  },
   increment: () => set((state) => ({ count: state.count + 1 })),
   decrement: () => set((state) => ({ count: state.count - 1 })),
   incrementByAmount: (amount: number) =>
