@@ -27,7 +27,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-In addition in this boilerplate is added support for SASS and the current latest version of TypeScript - 5.5.2.
+In addition in this boilerplate is added support for SASS and the current latest version of TypeScript - 5.8.2.
 
 ### Expanding the ESLint configuration
 
